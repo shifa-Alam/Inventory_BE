@@ -1,0 +1,1980 @@
+INFO:     127.0.0.1:60322 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61878 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51315 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51315 - "GET /suppliers/ HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:58493 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58493 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:55877 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55877 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55877 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59351 - "OPTIONS /stock HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59351 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60741 - "OPTIONS /stock-transactions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60741 - "GET /stock-transactions/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62267 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62269 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62271 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62273 - "GET /openapi.json HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53277 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53277 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:55483 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55483 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61182 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52138 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63142 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56738 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56738 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56738 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:58401 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50382 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52085 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:49949 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50668 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50668 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64991 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65353 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60604 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58980 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54179 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53660 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57107 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57107 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60440 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60440 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57107 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50219 - "OPTIONS /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50219 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56625 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56625 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63013 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58344 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53680 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "OPTIONS /stock HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53680 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53680 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62194 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63743 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53256 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54511 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63529 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63529 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63529 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56415 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64646 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58187 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54017 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54017 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55837 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58194 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53786 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53786 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53786 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57322 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57322 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57322 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61205 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60987 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53249 - "OPTIONS /sales/?page=2&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53249 - "GET /sales/?page=2&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53249 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62756 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62756 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62756 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62756 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65376 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51209 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51209 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62705 - "OPTIONS /categories/?page=1&page_size=20&name=foo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62705 - "GET /categories/?page=1&page_size=20&name=foo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51860 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51860 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51860 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51860 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55369 - "POST /categories/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:55369 - "POST /categories/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:55369 - "POST /categories/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:55369 - "POST /categories/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:55369 - "POST /categories/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:55369 - "POST /categories/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:55369 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55369 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55557 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:63730 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63730 - "OPTIONS /auth/roles HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63730 - "GET /auth/roles HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52709 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49976 - "GET /auth/roles HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64747 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63406 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50988 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51930 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65021 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53083 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61814 - "OPTIONS /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61814 - "POST /auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61814 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56430 - "OPTIONS /auth/users/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56430 - "PUT /auth/users/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56430 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62710 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62710 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52494 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52494 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54066 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54066 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49901 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49901 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49901 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54280 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54280 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54280 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49307 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49307 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49307 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49826 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:59986 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59986 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56438 - "OPTIONS /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56438 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56438 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:52983 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:56971 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 403 Forbidden
+INFO:     127.0.0.1:56217 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56217 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56217 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56217 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63289 - "PUT /auth/users/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63289 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53535 - "OPTIONS /auth/users/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53535 - "PUT /auth/users/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53535 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53535 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60362 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60362 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60362 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59182 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53333 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64038 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64038 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64038 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55362 - "OPTIONS /stock HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55362 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:60722 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60722 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60722 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60722 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60722 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60722 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60722 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65242 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56089 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56089 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56089 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56089 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56089 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56089 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56940 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56940 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56940 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55875 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55875 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55875 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55875 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55875 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55875 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56077 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56077 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56077 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57015 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57015 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58625 - "OPTIONS /auth/users/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58625 - "PUT /auth/users/1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58625 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58625 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:62596 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62596 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62596 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60037 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60037 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60037 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63120 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63120 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63120 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51671 - "OPTIONS /stock HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51671 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51671 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51671 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51671 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51671 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53816 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65395 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60705 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65395 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65091 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65091 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55956 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55956 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50998 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55956 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54751 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54915 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54915 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54915 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54751 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65331 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55924 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55924 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55924 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55924 - "GET /dashboard/ HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:49709 - "GET /stock HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59431 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59937 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57239 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59431 - "GET /reports/stock/summary HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57239 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59937 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52747 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52747 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52747 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "OPTIONS /reports/stock?page=1&page_size=20&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /reports/stock?page=1&page_size=20&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "OPTIONS /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "OPTIONS /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62686 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62686 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62686 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62686 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62206 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58438 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58438 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58438 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65454 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64763 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65454 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "OPTIONS /reports/stock?page=1&page_size=20&search=fo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "GET /reports/stock?page=1&page_size=20&search=fo HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "OPTIONS /reports/stock?page=1&page_size=20&search=fox HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "GET /reports/stock?page=1&page_size=20&search=fox HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "OPTIONS /reports/stock?page=1&page_size=20&search=f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "GET /reports/stock?page=1&page_size=20&search=f HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65209 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62728 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62728 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64271 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64271 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64271 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64271 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64112 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59522 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59522 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59522 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60524 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65414 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55402 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59532 - "GET /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51088 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49819 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49819 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49819 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49819 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49819 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58710 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49819 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59299 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59299 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59299 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52169 - "GET /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52169 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=1&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52169 - "GET /reports/stock?page=1&page_size=20&category_id=1&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52169 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53272 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62086 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59440 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54285 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54285 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54285 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50421 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50421 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51680 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64118 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64118 - "GET /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59124 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60453 - "OPTIONS /reports/stock?page=1&page_size=20&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60453 - "GET /reports/stock?page=1&page_size=20&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64284 - "OPTIONS /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64284 - "GET /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64476 - "OPTIONS /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64476 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55112 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63209 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63209 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63209 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63209 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63209 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63209 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63106 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54501 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61721 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52257 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59363 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52365 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52365 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52365 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52365 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52365 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62239 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58372 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58372 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49257 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49257 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51541 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61160 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61160 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61160 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57676 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57676 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61160 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57676 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61160 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54304 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54304 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54304 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54304 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54304 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55236 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55236 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55236 - "OPTIONS /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55236 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55236 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54903 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57909 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63767 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55160 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54457 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65532 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65532 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57261 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56468 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63147 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56092 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56092 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56092 - "OPTIONS /sales/?page=1&page_size=20&customer_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56092 - "GET /sales/?page=1&page_size=20&customer_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52878 - "OPTIONS /sales/?page=1&page_size=20&customer_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52878 - "GET /sales/?page=1&page_size=20&customer_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52779 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52779 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55743 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52779 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55743 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52779 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55743 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64202 - "OPTIONS /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64202 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64202 - "OPTIONS /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64202 - "GET /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64202 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52274 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55827 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60144 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63722 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63722 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63722 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65061 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65061 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60343 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65174 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56880 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65174 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56880 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63658 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63658 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60486 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52367 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65426 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55886 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61399 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54395 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62560 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62560 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51110 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54910 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62055 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62055 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63285 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63285 - "OPTIONS /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63285 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56861 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50615 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50615 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50615 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50615 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52156 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61239 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61239 - "OPTIONS /products/search?q=bbw HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61239 - "GET /products/search?q=bbw HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63494 - "OPTIONS /purchases/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63494 - "POST /purchases/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54146 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63494 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61178 - "OPTIONS /purchases/12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61178 - "GET /purchases/12 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55003 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55003 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55003 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54794 - "OPTIONS /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54794 - "POST /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54794 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53055 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53055 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54794 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54345 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55251 - "OPTIONS /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55251 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53562 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53731 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64914 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54740 - "POST /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53521 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51273 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51273 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51273 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51273 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56145 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50371 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50371 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50371 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50371 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64763 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64763 - "POST /sale-returns/ HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60177 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59321 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61518 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53137 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51031 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64976 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55889 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62493 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54752 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53088 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59407 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59407 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61654 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59407 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65217 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65217 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65217 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "OPTIONS /products/?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /products/?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60433 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60433 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63565 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60239 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:55246 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55246 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:60086 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60086 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60086 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60086 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60086 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53719 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53719 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60494 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53851 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61593 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63111 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53716 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59648 - "OPTIONS /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59648 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58613 - "OPTIONS /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56349 - "OPTIONS /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64575 - "OPTIONS /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58613 - "GET /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64575 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56349 - "GET /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60682 - "OPTIONS /payments/customer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60682 - "POST /payments/customer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60682 - "GET /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60682 - "GET /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60682 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53718 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60682 - "GET /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61002 - "GET /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51641 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51848 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51848 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51641 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54169 - "GET /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54169 - "GET /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54169 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56804 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56804 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:53844 - "OPTIONS /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53844 - "OPTIONS /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53844 - "OPTIONS /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53844 - "GET /customers/?page_size=1000 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53844 - "GET /payments/customer/summary HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:53844 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64407 - "POST /payments/customer HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63713 - "GET /payments/customer/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64407 - "GET /customers/?page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63713 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56150 - "GET /customers/?page_size=1000 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:63507 - "GET /payments/customer/summary HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52752 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64811 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64811 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64811 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64811 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64811 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60781 - "GET /customers/?page_size=1000 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:57340 - "GET /payments/customer/summary HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:51578 - "GET /payments/customer?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:62129 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55773 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "OPTIONS /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62129 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+  INFO:     127.0.0.1:51797 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57388 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57242 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51797 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57388 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57242 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65008 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65008 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65008 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+  INFO:     127.0.0.1:56882 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62231 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49875 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49579 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56807 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55443 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49579 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56807 - "GET /reports/stock/summary HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55443 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:61287 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61287 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:54681 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54681 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54681 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54681 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54681 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54681 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61116 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61116 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61116 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61965 - "OPTIONS /reports/stock?page=1&page_size=20&search=8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61965 - "GET /reports/stock?page=1&page_size=20&search=8 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61965 - "OPTIONS /reports/stock?page=1&page_size=20&search=899 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61965 - "GET /reports/stock?page=1&page_size=20&search=899 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "OPTIONS /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "GET /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "OPTIONS /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53163 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20&status=OUT HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20&category_id=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20&category_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=3&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20&category_id=3&status=LOW HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "OPTIONS /reports/stock?page=1&page_size=20&category_id=3&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54727 - "GET /reports/stock?page=1&page_size=20&category_id=3&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61829 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61829 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61829 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61829 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61829 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50658 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:63720 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55682 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55682 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63720 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54229 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54229 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:60206 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63814 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63814 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50295 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:56024 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61144 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61144 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61144 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:51680 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:64579 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64579 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51946 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51946 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49152 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51946 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49152 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49152 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:51946 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50424 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58766 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:53238 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59653 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50502 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50546 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60438 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:50546 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59653 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53299 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:60913 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54088 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56961 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56961 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56961 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:49391 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49391 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:55161 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52956 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:54826 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56256 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59138 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49694 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:52869 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60846 - "OPTIONS /payments/invoice?sale_id=32&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60846 - "GET /payments/invoice?sale_id=32&page_size=50 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:56504 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:60380 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:52967 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52967 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52967 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:55006 - "GET /payments/invoice?sale_id=32&page_size=50 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59629 - "POST /payments/invoice HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:55726 - "GET /payments/invoice HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55730 - "POST /payments/invoice HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55732 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:55734 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:55739 - "GET /sales/?has_due=true HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55741 - "POST /auth/login HTTP/1.1" 400 Bad Request
+ INFO:     127.0.0.1:57217 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64835 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57217 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64835 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54430 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "OPTIONS /payments/invoice?sale_id=32&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "GET /payments/invoice?sale_id=32&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "GET /payments/invoice?sale_id=32&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63108 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61935 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60296 - "OPTIONS /payments/invoice?sale_id=23&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60296 - "GET /payments/invoice?sale_id=23&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60296 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60296 - "GET /payments/invoice?sale_id=23&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58247 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58247 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60296 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:52617 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60006 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63255 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52617 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63255 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60006 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51307 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53492 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52871 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51307 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52871 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53492 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51307 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53492 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59156 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52871 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59156 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63951 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61488 - "OPTIONS /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61488 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49748 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61488 - "GET /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58896 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54303 - "OPTIONS /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50071 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50071 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54303 - "GET /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59648 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53086 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "OPTIONS /payments/invoice?sale_id=22&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "GET /payments/invoice?sale_id=22&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49656 - "GET /payments/invoice?sale_id=22&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53086 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57515 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59648 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57515 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59648 - "GET /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59079 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59079 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59079 - "OPTIONS /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59079 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54645 - "OPTIONS /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53044 - "POST /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60172 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53044 - "GET /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63584 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49942 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54188 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54188 - "OPTIONS /payments/invoice?sale_id=33&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54188 - "GET /payments/invoice?sale_id=33&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /payments/invoice?sale_id=33&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52562 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61618 - "GET /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53935 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53935 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63164 - "POST /sales/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:63164 - "POST /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65288 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64113 - "GET /payment-ledger/summary?target_date=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63626 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58971 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55685 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63626 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58871 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58971 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63523 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63523 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49580 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49580 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:56908 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52049 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "OPTIONS /payment-ledger/summary?date_from=2026-06-16&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-16&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /payment-ledger/summary?date_from=2026-06-16&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-16&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63678 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51502 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63678 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58751 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56283 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58751 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56283 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56283 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58751 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58431 - "OPTIONS /payments/invoice?sale_id=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58431 - "GET /payments/invoice?sale_id=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54666 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54666 - "POST /payments/invoice HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58919 - "GET /payments/invoice?sale_id=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60928 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60928 - "GET /payments/invoice?sale_id=1&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60928 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60928 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60928 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61411 - "OPTIONS /payments/invoice?sale_id=2&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61411 - "GET /payments/invoice?sale_id=2&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50693 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50693 - "GET /payments/invoice?sale_id=2&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60921 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50693 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50970 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64147 - "GET /payments/invoice/summary HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64147 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64147 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:64719 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64719 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64719 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64719 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64719 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64719 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64719 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64719 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52650 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55797 - "GET /payments/invoice?sale_id=2&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55401 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55401 - "GET /payments/invoice?sale_id=2&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55401 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55401 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55401 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54131 - "OPTIONS /payments/invoice?sale_id=31&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54131 - "GET /payments/invoice?sale_id=31&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54131 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54131 - "GET /payments/invoice?sale_id=31&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55275 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64551 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55419 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55419 - "OPTIONS /payments/invoice?sale_id=30&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55419 - "GET /payments/invoice?sale_id=30&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /payments/invoice?sale_id=30&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "OPTIONS /payments/invoice?sale_id=21&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /payments/invoice?sale_id=21&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /payments/invoice?sale_id=21&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59271 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62548 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "OPTIONS /payments/invoice?sale_id=20&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "GET /payments/invoice?sale_id=20&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "GET /payments/invoice?sale_id=20&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62548 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59271 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59271 - "OPTIONS /payments/invoice?sale_id=13&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59271 - "GET /payments/invoice?sale_id=13&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59271 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57078 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59271 - "GET /payments/invoice?sale_id=13&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62548 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57982 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "OPTIONS /payments/invoice?sale_id=19&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice?sale_id=19&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice?sale_id=19&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "OPTIONS /payments/invoice?sale_id=18&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice?sale_id=18&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice?sale_id=18&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61029 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62876 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62876 - "OPTIONS /payments/invoice?sale_id=16&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62876 - "GET /payments/invoice?sale_id=16&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62876 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62876 - "GET /payments/invoice?sale_id=16&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57314 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61029 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "OPTIONS /payments/invoice?sale_id=4&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /payments/invoice?sale_id=4&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /payments/invoice?sale_id=4&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61730 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60987 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60987 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49436 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:55164 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62880 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55511 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55164 - "GET /payments/invoice/summary HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:62880 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:55511 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:52973 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52973 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52973 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55575 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65306 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64414 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49273 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63504 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63504 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50878 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50878 - "GET /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50878 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50878 - "GET /payment-ledger/operator-summary?date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58392 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62602 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62281 - "OPTIONS /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62281 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62602 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62412 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62412 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54420 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54420 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61640 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61640 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61640 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61640 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62897 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54991 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52278 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64359 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55228 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55228 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55228 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55228 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62414 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51942 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51942 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61545 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55904 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64842 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50672 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60535 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63303 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61745 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60549 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60549 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49153 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49153 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51771 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51937 - "GET /customers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51157 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64348 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63961 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63961 - "GET /customers/ HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:52535 - "OPTIONS /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52535 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55995 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49273 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51840 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49273 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56700 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56700 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "POST /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52756 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62580 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62580 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56832 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62643 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49875 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49875 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49875 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49875 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62634 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62634 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62494 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55804 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53364 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61585 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50643 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53834 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53453 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53283 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53283 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62076 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63599 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63599 - "GET /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /payment-ledger/operator-summary?date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /payment-ledger/operator-summary?date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62362 - "GET /payment-ledger/operator-summary?date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63639 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62045 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60093 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49772 - "OPTIONS /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60592 - "OPTIONS /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60592 - "GET /customers/?page_size=500 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49772 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58654 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58654 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61275 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20&date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20&date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20&date_from=2026-05-31&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52835 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53344 - "OPTIONS /sales/?page=2&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53344 - "GET /sales/?page=2&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56552 - "OPTIONS /sales/?page=1&page_size=20&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56552 - "GET /sales/?page=1&page_size=20&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56552 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-05-31&date_to=2026-06-19&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56552 - "GET /sales/?page=1&page_size=20&date_from=2026-05-31&date_to=2026-06-19&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19&has_due=true HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57364 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "OPTIONS /customers/?search=l&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53497 - "GET /customers/?search=l&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "OPTIONS /sales/?page=1&page_size=20&customer_id=1&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /sales/?page=1&page_size=20&customer_id=1&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /customers/?search=l&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "OPTIONS /sales/?page=1&page_size=20&customer_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "GET /sales/?page=1&page_size=20&customer_id=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60543 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61230 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61230 - "GET /sales/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52389 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50913 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58301 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57391 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57391 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57391 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57391 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65433 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65433 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55975 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65140 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60043 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65252 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57858 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64199 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64199 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60900 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60900 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60900 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60900 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52488 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52488 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52488 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52488 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52677 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61395 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52488 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56330 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63160 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56330 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63160 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58987 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58987 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59452 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59452 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59452 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54465 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54465 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59452 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54465 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59452 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59452 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59452 - "GET /dashboard/ HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:55251 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55251 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58597 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58597 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58597 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58597 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59546 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59546 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63508 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63508 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63508 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63508 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63508 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63508 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63508 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61611 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61611 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61611 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61611 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53452 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53452 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64184 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64184 - "OPTIONS /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64184 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "OPTIONS /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "POST /sales/ HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:52722 - "POST /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52722 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51434 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51434 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55699 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55268 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55268 - "POST /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55268 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64961 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60846 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60846 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64961 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53381 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53381 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53381 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55648 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53381 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55648 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53154 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63397 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54175 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54175 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54175 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54175 - "GET /dashboard/ HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:51151 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51151 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:51151 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51151 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51151 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56772 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56772 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58843 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58843 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62193 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62193 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61149 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61149 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65034 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65034 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54593 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54593 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54593 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54593 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60009 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60009 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50290 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50290 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50290 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50290 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63329 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63329 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53631 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53631 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54648 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54648 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50065 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50984 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50984 - "POST /auth/login HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:50984 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50984 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50984 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49523 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49523 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63456 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63456 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55922 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55922 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56652 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53117 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53117 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59235 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59235 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63613 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63613 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63613 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63613 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51516 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51516 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55306 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55306 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59173 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59173 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63636 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63636 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51403 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51403 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59270 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59270 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56405 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56405 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61854 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61854 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59690 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59690 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49402 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49402 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51285 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51285 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51285 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62993 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58646 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58646 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56671 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56671 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62663 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62663 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56209 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56209 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65182 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65182 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59950 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59950 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53384 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53384 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55897 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53384 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60361 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55897 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53384 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50535 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53631 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63736 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59204 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59204 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59204 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59204 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59204 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56833 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56833 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56833 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56833 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56833 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56833 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58345 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58345 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57521 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57521 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57224 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57224 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52076 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52076 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55597 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55597 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55597 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55597 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57602 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57602 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58418 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58418 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58418 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58418 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54977 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54977 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64342 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64342 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64342 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64342 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55086 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55086 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55086 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55086 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55086 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58983 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58983 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58983 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58983 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58983 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58983 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58983 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58983 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59298 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59298 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59298 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59298 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54853 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54853 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54853 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54853 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54853 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54853 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65325 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65325 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64670 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64670 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64670 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64670 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64670 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64670 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50836 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50836 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61288 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61288 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61288 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54020 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60011 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55107 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55107 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54020 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60011 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60011 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60011 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58496 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58496 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63068 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63068 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63068 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50200 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55377 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55377 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63801 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58362 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58362 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58262 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58262 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58262 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58262 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58504 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58504 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58504 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60513 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60513 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60513 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58045 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58045 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58045 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58045 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58045 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58041 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58041 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58041 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60111 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60111 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60111 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57901 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57901 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57901 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57901 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57901 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51571 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51571 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51571 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51571 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51571 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64817 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64817 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64817 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64817 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64817 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64817 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64817 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64817 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64817 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64817 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56160 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56160 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56160 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58767 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58767 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50750 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50750 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59753 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59753 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59753 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55832 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55832 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62616 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62616 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62616 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62616 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62616 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62616 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62616 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62616 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62616 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59541 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59541 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59541 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59541 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59541 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59541 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59541 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59541 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52187 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:52187 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55917 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55917 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60874 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60874 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60874 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:60874 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62623 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62623 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62623 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62623 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62623 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62623 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65474 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65474 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65474 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65474 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65474 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51454 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49474 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49474 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56724 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56724 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56724 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56724 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49261 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:49261 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51241 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51241 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53048 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53048 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54132 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:54132 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63751 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63751 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55289 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55289 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55289 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55289 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55289 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58049 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58049 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50100 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50100 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50100 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50100 - "GET /dashboard/ HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:63804 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63804 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63804 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:63804 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64459 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:64459 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50444 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50444 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56620 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56620 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:56620 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55835 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:55835 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55625 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55996 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55996 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55625 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63442 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62968 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62968 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62968 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62968 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56255 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62387 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62327 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62327 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62387 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62327 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62387 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52564 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64645 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "OPTIONS /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54610 - "OPTIONS /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64645 - "OPTIONS /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54610 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51811 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64645 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61769 - "OPTIONS /payments/invoice?sale_id=7&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61769 - "GET /payments/invoice?sale_id=7&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54502 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54502 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54502 - "GET /payments/invoice?sale_id=7&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54502 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54502 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54502 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49338 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49338 - "GET /payments/invoice?sale_id=7&page_size=50 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59133 - "GET /payments/invoice?page=1&page_size=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62534 - "GET /payments/invoice/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56830 - "GET /sales/?has_due=true&page=1&page_size=15 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56591 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57721 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57721 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56591 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61421 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56130 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59992 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59992 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59992 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:59992 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61231 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61231 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50178 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50178 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49791 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65073 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:65073 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58496 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:58496 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59603 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62184 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61466 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61466 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61466 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62184 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62184 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62184 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58363 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58363 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55805 - "OPTIONS /products/?page=1&page_size=20&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55805 - "GET /products/?page=1&page_size=20&status=OK HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62205 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50558 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52062 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64329 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64329 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52062 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52062 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64329 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52062 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64329 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49424 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49424 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62825 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64086 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63228 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61296 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57794 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57794 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62130 - "OPTIONS /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62130 - "GET /stock-transactions/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57645 - "OPTIONS /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57645 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60156 - "OPTIONS /stock-transactions/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60156 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65533 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65533 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63264 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63264 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53824 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53824 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:53824 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53824 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53824 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54539 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53824 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57859 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52256 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54567 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59329 - "OPTIONS /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59329 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65507 - "OPTIONS /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65507 - "POST /sales/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65507 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51717 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56529 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59264 - "GET /products/search?q=bb HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61438 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61438 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61438 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61438 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61438 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65020 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65020 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65020 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51647 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51647 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51647 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:57582 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57582 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60101 - "GET /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57130 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64443 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64443 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64443 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65016 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65016 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58015 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58015 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58039 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58039 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63999 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63999 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63999 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54220 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53471 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52525 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59953 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59953 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52525 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60432 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49494 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60432 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49494 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49494 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61854 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64195 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64195 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64195 - "OPTIONS /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64195 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64195 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "OPTIONS /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49628 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54170 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54170 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "GET /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63871 - "GET /sales/?page=1&page_size=20&date_from=2026-06-18&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "GET /payment-ledger/operator-summary?date_from=2026-06-18&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-18&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "GET /payment-ledger/operator-summary?date_from=2026-06-18&date_to=2026-06-18 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "OPTIONS /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64396 - "GET /payment-ledger/operator-summary?date_from=2026-06-14&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55037 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55037 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55037 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62200 - "GET /product-wastes/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61644 - "GET /payment-ledger/operator-summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61644 - "OPTIONS /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61644 - "OPTIONS /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61644 - "GET /payment-ledger/summary?date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61644 - "GET /payment-ledger/?page=1&page_size=30&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54216 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60677 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61723 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58438 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61177 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+ INFO:     127.0.0.1:57230 - "OPTIONS /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57230 - "GET /stock-transactions/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:50771 - "OPTIONS /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50771 - "POST /auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50771 - "OPTIONS /dashboard HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50771 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:50771 - "OPTIONS /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50771 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "OPTIONS /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /auth/users/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:51381 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "OPTIONS /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "OPTIONS /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "OPTIONS /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "OPTIONS /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "OPTIONS /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54444 - "OPTIONS /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51381 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54444 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "OPTIONS /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "OPTIONS /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "OPTIONS /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "OPTIONS /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58107 - "OPTIONS /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58107 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "OPTIONS /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63620 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53116 - "OPTIONS /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53116 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49546 - "OPTIONS /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49546 - "GET /customers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49546 - "GET /sale-returns/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49546 - "GET /sales/?page=1&page_size=20&date_from=2026-06-19&date_to=2026-06-19 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56025 - "OPTIONS /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64423 - "POST /payments/invoice HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57638 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57638 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57638 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65448 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57638 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57638 - "GET /dashboard HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:57638 - "GET /dashboard/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /reports/stock/summary HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /categories/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /reports/stock?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /categories/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64128 - "GET /categories/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /products/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /customers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /suppliers/?page=1&page_size=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /suppliers/?page=1&page_size=1000 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53266 - "GET /suppliers/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49271 - "GET /purchases/?page=1&page_size=20 HTTP/1.1" 200 OK
