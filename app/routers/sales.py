@@ -106,6 +106,7 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
     due = net_total - data.paid_amount
 
     sale.total_amount = net_total
+    sale.discount_amount = discount
     sale.due_amount = due
 
     # UPDATE CUSTOMER DUE
@@ -206,8 +207,9 @@ def get_sales(
             "customer_id": s.customer_id,
             "customer_name": customer_name,
             "paid_amount": s.paid_amount,
-            "total_amount": s.total_amount,
             "discount_amount": s.discount_amount if hasattr(s, 'discount_amount') else 0,
+            "total_amount": s.total_amount,
+            "subtotal": round((s.total_amount or 0) + (s.discount_amount or 0), 2),
             "due_amount": s.due_amount,
             "created_at": s.created_at,
             "items": item_list
@@ -226,12 +228,34 @@ def get_sale(sale_id: int, db: Session = Depends(get_db)):
 
     items = db.query(SaleItem).filter(SaleItem.sale_id == sale.id).all()
 
+    customer_name = None
+    if sale.customer_id:
+        customer = db.query(Customer).filter(Customer.id == sale.customer_id).first()
+        if customer:
+            customer_name = customer.name
+
+    item_list = []
+    for i in items:
+        product = db.query(Product).filter(Product.id == i.product_id).first()
+        item_list.append({
+            "product_id": i.product_id,
+            "product_name": product.name if product else None,
+            "quantity": i.quantity,
+            "rate": i.rate,
+            "total": i.quantity * i.rate
+        })
+
+    discount_amount = sale.discount_amount if hasattr(sale, 'discount_amount') else 0
     return {
         "id": sale.id,
+        "invoice_no": sale.invoice_no,
         "customer_id": sale.customer_id,
+        "customer_name": customer_name,
+        "subtotal": round((sale.total_amount or 0) + (discount_amount or 0), 2),
+        "discount_amount": discount_amount or 0,
         "total_amount": sale.total_amount,
         "paid_amount": sale.paid_amount,
         "due_amount": sale.due_amount,
-        "invoice_no": sale.invoice_no,
-        "items": items
+        "created_at": sale.created_at,
+        "items": item_list
     }
