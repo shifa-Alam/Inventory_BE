@@ -94,12 +94,18 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
         )
 
     # 5. FINAL CALCULATION
-    if data.paid_amount > total:
+    discount = data.discount or 0
+    if discount > total:
+        raise HTTPException(status_code=400, detail="Discount exceeds order total")
+
+    net_total = total - discount
+
+    if data.paid_amount > net_total:
         raise HTTPException(status_code=400, detail="Paid amount exceeds order total")
 
-    due = total - data.paid_amount
+    due = net_total - data.paid_amount
 
-    sale.total_amount = total
+    sale.total_amount = net_total
     sale.due_amount = due
 
     # UPDATE CUSTOMER DUE
@@ -118,6 +124,18 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
             created_by=_current_user_name(current_user),
         )
 
+    if discount > 0:
+        log_payment(
+            db=db,
+            transaction_type="DISCOUNT",
+            amount=discount,
+            reference_no=sale.invoice_no,
+            sale_id=sale.id,
+            customer_id=data.customer_id,
+            note=f"Discount on sale {sale.invoice_no}",
+            created_by=_current_user_name(current_user),
+        )
+
     # 6. FINAL SAVE
     db.commit()
     db.refresh(sale)
@@ -125,7 +143,9 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
     return {
         "message": "Sale created successfully",
         "invoice_no": sale.invoice_no,
-        "total": total,
+        "subtotal": total,
+        "discount": discount,
+        "total": net_total,
         "paid": data.paid_amount,
         "due": due
     }

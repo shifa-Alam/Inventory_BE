@@ -11,5 +11,6 @@ class SaleItemCreate(BaseModel):
 class SaleCreate(BaseModel):
     customer_id: int
     paid_amount: float = Field(ge=0, default=0)
+    discount: float = Field(ge=0, default=0)
     invoice_no: str = ''
     items: List[SaleItemCreate] = Field(min_length=1)
