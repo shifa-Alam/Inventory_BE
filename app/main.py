@@ -53,12 +53,16 @@ run_migrations()
 def seed_default_user():
     db = SessionLocal()
     try:
-        if db.query(User).count() == 0:
+        user = db.query(User).filter(User.username == "systemadmin@gmail.com").first()
+        if user is None:
             db.add(User(
                 username="systemadmin@gmail.com",
                 password=hash_password("admin@123##"),
                 role="system_admin"
             ))
+            db.commit()
+        elif not user.password.startswith("$2b$"):
+            user.password = hash_password("admin@123##")
             db.commit()
     finally:
         db.close()
