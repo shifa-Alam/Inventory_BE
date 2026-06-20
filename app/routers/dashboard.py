@@ -169,6 +169,46 @@ def dashboard_summary(db: Session = Depends(get_db)):
             "margin":  margin,
         })
 
+    # ── Slow-moving items (in stock but least sold this month) ───────
+    sold_ids_this_month = {r.product_id for r in top_rows}
+    slow_moving_items = []
+    # Products with stock > 0, ordered by qty sold this month ascending (unsold first)
+    slow_rows = (
+        db.query(SaleItem.product_id,
+                 func.coalesce(func.sum(SaleItem.quantity), 0).label("qty"))
+        .join(Sale, Sale.id == SaleItem.sale_id)
+        .filter(Sale.created_at >= datetime.combine(month_start, time.min))
+        .group_by(SaleItem.product_id)
+        .order_by(func.sum(SaleItem.quantity).asc())
+        .all()
+    )
+    slow_sold_map = {r.product_id: int(r.qty) for r in slow_rows}
+
+    # Products with stock > 0 not sold at all this month
+    unsold = (
+        db.query(Product)
+        .filter(Product.current_stock > 0, ~Product.id.in_(slow_sold_map.keys()))
+        .order_by(Product.current_stock.desc())
+        .limit(5).all()
+    )
+    for p in unsold:
+        slow_moving_items.append({
+            "name": p.name, "stock": p.current_stock or 0, "month_qty": 0
+        })
+
+    # Products sold very little this month (fill up to 8 total)
+    if len(slow_moving_items) < 8:
+        for pid, qty in sorted(slow_sold_map.items(), key=lambda x: x[1]):
+            if len(slow_moving_items) >= 8:
+                break
+            p = db.query(Product).filter(Product.id == pid, Product.current_stock > 0).first()
+            if p:
+                slow_moving_items.append({
+                    "name": p.name, "stock": p.current_stock or 0, "month_qty": qty
+                })
+
+    slow_moving_items = slow_moving_items[:8]
+
     # ── Recent 8 sales ────────────────────────────────────────────
     recent_rows  = db.query(Sale).order_by(Sale.id.desc()).limit(8).all()
     recent_sales = []
@@ -215,5 +255,6 @@ def dashboard_summary(db: Session = Depends(get_db)):
         "top_products":          top_products,
         "top_due_customers":     top_due_customers,
         "low_stock_items":       low_stock_items,
+        "slow_moving_items":     slow_moving_items,
         "recent_sales":          recent_sales,
     }
