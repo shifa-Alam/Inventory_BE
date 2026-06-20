@@ -35,6 +35,7 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db)):
         category_id=product.category_id,
         purchase_price=product.purchase_price,
         sale_price=product.sale_price,
+        mrp=product.mrp,
         current_stock=product.current_stock
     )
 
@@ -80,6 +81,7 @@ def update_product(product_id: int, product: ProductUpdate, db: Session = Depend
     db_product.category_id = product.category_id
     db_product.purchase_price = product.purchase_price
     db_product.sale_price = product.sale_price
+    db_product.mrp = product.mrp
 
     db.commit()
     db.refresh(db_product)
@@ -133,6 +135,7 @@ def get_products(
             "category_id": p.category_id,
             "purchase_price": p.purchase_price,
             "sale_price": p.sale_price,
+            "mrp": p.mrp or 0,
             "current_stock": p.current_stock,
             "stock_value": (p.current_stock or 0) * (p.purchase_price or 0),
             "status": "LOW" if p.current_stock <= 10 else "OK"

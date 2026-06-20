@@ -7,6 +7,7 @@ class ProductCreate(BaseModel):
     category_id: int
     purchase_price: float = Field(ge=0, default=0)
     sale_price: float = Field(ge=0, default=0)
+    mrp: float = Field(ge=0, default=0)
     current_stock: float = Field(ge=0, default=0)
 
 
@@ -16,6 +17,7 @@ class ProductUpdate(BaseModel):
     category_id: int
     purchase_price: float = Field(ge=0, default=0)
     sale_price: float = Field(ge=0, default=0)
+    mrp: float = Field(ge=0, default=0)
 
 
 class ProductResponse(ProductCreate):

@@ -17,4 +17,6 @@ class Product(Base):
 
     sale_price = Column(Float, default=0)
 
+    mrp = Column(Float, default=0)
+
     current_stock = Column(Float, default=0)
