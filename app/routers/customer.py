@@ -19,6 +19,7 @@ router = APIRouter(
 @router.get("/")
 def get_customers(
     name: Optional[str] = Query(None),
+    phone: Optional[str] = Query(None),
     has_due: Optional[bool] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
@@ -28,6 +29,8 @@ def get_customers(
 
     if name:
         query = query.filter(Customer.name.ilike(f"%{name}%"))
+    if phone:
+        query = query.filter(Customer.phone.ilike(f"%{phone}%"))
     if has_due is True:
         query = query.filter(Customer.current_due > 0)
     elif has_due is False:

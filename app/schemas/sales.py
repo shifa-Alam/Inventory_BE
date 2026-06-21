@@ -1,5 +1,5 @@
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Optional
 
 
 class SaleItemCreate(BaseModel):
@@ -9,7 +9,7 @@ class SaleItemCreate(BaseModel):
 
 
 class SaleCreate(BaseModel):
-    customer_id: int
+    customer_id: Optional[int] = None
     paid_amount: float = Field(ge=0, default=0)
     discount: float = Field(ge=0, default=0)
     invoice_no: str = ''

@@ -39,6 +39,7 @@ def run_migrations():
             "ALTER TABLE customer_payments ADD COLUMN discount_amount FLOAT DEFAULT 0",
             "ALTER TABLE customer_payments ADD COLUMN amount FLOAT DEFAULT 0",
             "ALTER TABLE products ADD COLUMN mrp FLOAT DEFAULT 0",
+            "ALTER TABLE sale_items ADD COLUMN returned_qty FLOAT NOT NULL DEFAULT 0",
         ]
         for sql in migrations:
             try:

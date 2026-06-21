@@ -31,9 +31,21 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
 
     total = 0
 
-    # 1. CREATE SALE FIRST
+    # 1. RESOLVE CUSTOMER
+    if data.customer_id:
+        customer = db.query(Customer).filter(Customer.id == data.customer_id).first()
+        if not customer:
+            raise HTTPException(status_code=404, detail="Customer not found")
+    else:
+        customer = db.query(Customer).filter(Customer.name == "Walk-in").first()
+        if not customer:
+            customer = Customer(name="Walk-in", phone='', address='', credit_limit=0, opening_due=0, current_due=0)
+            db.add(customer)
+            db.flush()
+
+    # 2. CREATE SALE
     sale = Sale(
-        customer_id=data.customer_id,
+        customer_id=customer.id,
         paid_amount=data.paid_amount,
         total_amount=0,
         due_amount=0,
@@ -41,20 +53,11 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
     )
 
     db.add(sale)
-    db.flush()  # 👈 IMPORTANT (get sale.id without commit)
+    db.flush()
 
-    # 2. GENERATE INVOICE NO
+    # 3. GENERATE INVOICE NO
     date_part = datetime.now().strftime("%Y%m%d")
-
     sale.invoice_no = f"INV-{date_part}-{str(sale.id).zfill(5)}"
-
-    # 3. CHECK CUSTOMER
-    customer = db.query(Customer).filter(
-        Customer.id == data.customer_id
-    ).first()
-
-    if not customer:
-        raise HTTPException(status_code=404, detail="Customer not found")
 
     # 4. PROCESS ITEMS
     for item in data.items:
@@ -143,6 +146,7 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
 
     return {
         "message": "Sale created successfully",
+        "id": sale.id,
         "invoice_no": sale.invoice_no,
         "subtotal": total,
         "discount": discount,
@@ -242,6 +246,8 @@ def get_sale(sale_id: int, db: Session = Depends(get_db)):
             "product_name": product.name if product else None,
             "quantity": i.quantity,
             "rate": i.rate,
+            "mrp": (product.mrp or 0) if product else 0,
+            "returned_qty": i.returned_qty or 0,
             "total": i.quantity * i.rate
         })
 

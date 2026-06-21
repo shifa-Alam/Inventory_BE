@@ -16,3 +16,5 @@ class SaleItem(Base):
     rate = Column(Float)
 
     amount = Column(Float)
+
+    returned_qty = Column(Float, default=0, nullable=False, server_default="0")

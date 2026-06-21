@@ -36,19 +36,36 @@ def create_sale_return(data: SaleReturnCreate, db: Session = Depends(get_db), cu
     if sale.customer_id != data.customer_id:
         raise HTTPException(status_code=400, detail="Customer does not match the original sale")
 
-    original_items = db.query(SaleItem).filter(SaleItem.sale_id == sale.id).all()
-    original_qty = {i.product_id: i.quantity for i in original_items}
+    # Lock the sale_items rows so concurrent requests can't double-return
+    original_items = (
+        db.query(SaleItem)
+        .filter(SaleItem.sale_id == sale.id)
+        .with_for_update()
+        .all()
+    )
+    item_map = {i.product_id: i for i in original_items}
 
     for item in data.items:
-        if item.product_id not in original_qty:
+        if item.product_id not in item_map:
             raise HTTPException(
                 status_code=400,
                 detail=f"Product {item.product_id} was not in the original sale"
             )
-        if item.quantity > original_qty[item.product_id]:
+        si = item_map[item.product_id]
+        remaining = si.quantity - (si.returned_qty or 0)
+        if remaining <= 0:
+            product = db.query(Product).filter(Product.id == item.product_id).first()
+            name = product.name if product else f"Product {item.product_id}"
             raise HTTPException(
                 status_code=400,
-                detail=f"Return quantity for product {item.product_id} exceeds sold quantity"
+                detail=f'"{name}" has already been fully returned for this invoice'
+            )
+        if item.quantity > remaining:
+            product = db.query(Product).filter(Product.id == item.product_id).first()
+            name = product.name if product else f"Product {item.product_id}"
+            raise HTTPException(
+                status_code=400,
+                detail=f'Return qty for "{name}" exceeds remaining returnable qty ({remaining})'
             )
 
     sale_return = SaleReturn(
@@ -82,6 +99,10 @@ def create_sale_return(data: SaleReturnCreate, db: Session = Depends(get_db), cu
             amount=amount
         ))
 
+        # Update returned_qty on the original SaleItem (database-level tracking)
+        si = item_map[item.product_id]
+        si.returned_qty = (si.returned_qty or 0) + item.quantity
+
         log_stock(
             db=db,
             product=product,
@@ -92,16 +113,22 @@ def create_sale_return(data: SaleReturnCreate, db: Session = Depends(get_db), cu
             note=data.reason
         )
 
-    sale_return.total_amount = total
+    # Apply proportional discount to refund
+    discount_amount = sale.discount_amount or 0
+    subtotal_original = (sale.total_amount or 0) + discount_amount
+    discount_rate = discount_amount / subtotal_original if subtotal_original else 0
+    net_refund = round(total * (1 - discount_rate), 2)
+
+    sale_return.total_amount = net_refund
 
     # Reduce customer due (can't go below 0)
-    customer.current_due = max(0, customer.current_due - total)
+    customer.current_due = max(0, customer.current_due - net_refund)
 
     # Log to central payment ledger as negative (cash out / refund)
     log_payment(
         db=db,
         transaction_type="RETURN",
-        amount=-total,
+        amount=-net_refund,
         reference_no=sale_return.return_no,
         sale_id=data.sale_id,
         customer_id=data.customer_id,
@@ -115,7 +142,9 @@ def create_sale_return(data: SaleReturnCreate, db: Session = Depends(get_db), cu
     return {
         "message": "Sale return recorded successfully",
         "return_no": sale_return.return_no,
-        "total_returned": total
+        "gross_returned": total,
+        "discount_deduction": round(total * discount_rate, 2),
+        "refund_amount": net_refund
     }
 
 
@@ -159,10 +188,12 @@ def get_sale_returns(
                 "amount": i.amount
             })
 
+        sale_for_inv = db.query(Sale).filter(Sale.id == r.sale_id).first()
         result.append({
             "id": r.id,
             "return_no": r.return_no,
             "sale_id": r.sale_id,
+            "invoice_no": sale_for_inv.invoice_no if sale_for_inv else None,
             "customer_name": customer.name if customer else None,
             "total_amount": r.total_amount,
             "reason": r.reason,
