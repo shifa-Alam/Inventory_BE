@@ -233,10 +233,14 @@ def get_sale(sale_id: int, db: Session = Depends(get_db)):
     items = db.query(SaleItem).filter(SaleItem.sale_id == sale.id).all()
 
     customer_name = None
+    customer_phone = None
+    customer_address = None
     if sale.customer_id:
         customer = db.query(Customer).filter(Customer.id == sale.customer_id).first()
         if customer:
             customer_name = customer.name
+            customer_phone = customer.phone
+            customer_address = customer.address
 
     item_list = []
     for i in items:
@@ -257,6 +261,8 @@ def get_sale(sale_id: int, db: Session = Depends(get_db)):
         "invoice_no": sale.invoice_no,
         "customer_id": sale.customer_id,
         "customer_name": customer_name,
+        "customer_phone": customer_phone,
+        "customer_address": customer_address,
         "subtotal": round((sale.total_amount or 0) + (discount_amount or 0), 2),
         "discount_amount": discount_amount or 0,
         "total_amount": sale.total_amount,
