@@ -15,16 +15,24 @@ router = APIRouter(
 )
 
 
-# GET ALL PRODUCTS
-# @router.get("/")
-# def get_products(db: Session = Depends(get_db)):
-#     return db.query(Product).all()
+def _serialize(p: Product) -> dict:
+    return {
+        "id": p.id,
+        "name": p.name,
+        "sku": p.sku,
+        "category_id": p.category_id,
+        "purchase_price": p.purchase_price,
+        "sale_price": p.sale_price,
+        "mrp": p.mrp or 0,
+        "current_stock": p.current_stock,
+        "stock_value": (p.current_stock or 0) * (p.purchase_price or 0),
+        "is_active": p.is_active if p.is_active is not None else True,
+        "status": "LOW" if (p.current_stock or 0) <= 10 else "OK",
+    }
 
 
-# CREATE PRODUCT
 @router.post("/")
 def create_product(product: ProductCreate, db: Session = Depends(get_db)):
-
     existing = db.query(Product).filter(Product.sku == product.sku).first()
     if existing:
         raise HTTPException(status_code=400, detail="SKU already exists")
@@ -36,43 +44,42 @@ def create_product(product: ProductCreate, db: Session = Depends(get_db)):
         purchase_price=product.purchase_price,
         sale_price=product.sale_price,
         mrp=product.mrp,
-        current_stock=product.current_stock
+        current_stock=product.current_stock,
+        is_active=True,
     )
-
     db.add(db_product)
     db.commit()
     db.refresh(db_product)
-
-    return db_product
+    return _serialize(db_product)
 
 
 @router.get("/search")
 def search_products(q: str, db: Session = Depends(get_db)):
-    sku_match = db.query(Product).filter(Product.sku == q).first()
+    """Active-only search used by sales and purchase forms."""
+    sku_match = db.query(Product).filter(
+        Product.sku == q, Product.is_active == True
+    ).first()
     if sku_match:
-        return [sku_match]
-    return db.query(Product).filter(
-        Product.name.ilike(f"%{q}%")
-    ).limit(10).all()
-
-# GET BY ID
+        return [_serialize(sku_match)]
+    return [
+        _serialize(p) for p in
+        db.query(Product)
+          .filter(Product.name.ilike(f"%{q}%"), Product.is_active == True)
+          .limit(10).all()
+    ]
 
 
 @router.get("/{product_id}")
 def get_product(product_id: int, db: Session = Depends(get_db)):
     product = db.query(Product).filter(Product.id == product_id).first()
-
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
+    return _serialize(product)
 
-    return product
 
-
-# UPDATE PRODUCT
 @router.put("/{product_id}")
 def update_product(product_id: int, product: ProductUpdate, db: Session = Depends(get_db)):
     db_product = db.query(Product).filter(Product.id == product_id).first()
-
     if not db_product:
         raise HTTPException(status_code=404, detail="Product not found")
 
@@ -85,21 +92,27 @@ def update_product(product_id: int, product: ProductUpdate, db: Session = Depend
 
     db.commit()
     db.refresh(db_product)
+    return _serialize(db_product)
 
-    return db_product
+
+@router.patch("/{product_id}/toggle-active")
+def toggle_active(product_id: int, db: Session = Depends(get_db)):
+    db_product = db.query(Product).filter(Product.id == product_id).first()
+    if not db_product:
+        raise HTTPException(status_code=404, detail="Product not found")
+    db_product.is_active = not (db_product.is_active if db_product.is_active is not None else True)
+    db.commit()
+    db.refresh(db_product)
+    return _serialize(db_product)
 
 
-# DELETE PRODUCT
 @router.delete("/{product_id}")
 def delete_product(product_id: int, db: Session = Depends(get_db), _: dict = Depends(require_admin)):
     db_product = db.query(Product).filter(Product.id == product_id).first()
-
     if not db_product:
         raise HTTPException(status_code=404, detail="Product not found")
-
     db.delete(db_product)
     db.commit()
-
     return {"message": "Product deleted"}
 
 
@@ -108,6 +121,7 @@ def get_products(
     name: Optional[str] = Query(None),
     category_id: Optional[int] = Query(None),
     status: Optional[str] = Query(None, description="OK or LOW"),
+    is_active: Optional[bool] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
     db: Session = Depends(get_db)
@@ -122,23 +136,10 @@ def get_products(
         query = query.filter(Product.current_stock <= 10)
     elif status == "OK":
         query = query.filter(Product.current_stock > 10)
+    if is_active is not None:
+        query = query.filter(Product.is_active == is_active)
 
     total = query.count()
     products = query.offset((page - 1) * page_size).limit(page_size).all()
 
-    result = []
-    for p in products:
-        result.append({
-            "id": p.id,
-            "name": p.name,
-            "sku": p.sku,
-            "category_id": p.category_id,
-            "purchase_price": p.purchase_price,
-            "sale_price": p.sale_price,
-            "mrp": p.mrp or 0,
-            "current_stock": p.current_stock,
-            "stock_value": (p.current_stock or 0) * (p.purchase_price or 0),
-            "status": "LOW" if p.current_stock <= 10 else "OK"
-        })
-
-    return make_page(result, total, page, page_size)
+    return make_page([_serialize(p) for p in products], total, page, page_size)

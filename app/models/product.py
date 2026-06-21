@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, ForeignKey, Boolean
 from app.core.database import Base
 
 
@@ -20,3 +20,5 @@ class Product(Base):
     mrp = Column(Float, default=0)
 
     current_stock = Column(Float, default=0)
+
+    is_active = Column(Boolean, default=True, nullable=False, server_default="1")
