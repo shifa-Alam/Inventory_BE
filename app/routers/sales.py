@@ -4,7 +4,7 @@ from typing import Optional
 from datetime import datetime, date, time
 
 from app.core.database import get_db
-from app.core.deps import get_current_user
+from app.core.deps import get_current_user, get_tenant_id
 from app.core.pagination import make_page
 from app.core.stock import log_stock
 from app.core.payment_log import log_payment
@@ -27,19 +27,23 @@ def _current_user_name(current_user: dict) -> str:
 
 
 @router.post("/")
-def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: dict = Depends(get_current_user)):
-
+def create_sale(
+    data: SaleCreate,
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+    tenant_id: int = Depends(get_tenant_id),
+):
     total = 0
 
-    # 1. RESOLVE CUSTOMER
+    # 1. RESOLVE CUSTOMER (scoped to tenant)
     if data.customer_id:
-        customer = db.query(Customer).filter(Customer.id == data.customer_id).first()
+        customer = db.query(Customer).filter(Customer.id == data.customer_id, Customer.tenant_id == tenant_id).first()
         if not customer:
             raise HTTPException(status_code=404, detail="Customer not found")
     else:
-        customer = db.query(Customer).filter(Customer.name == "Walk-in").first()
+        customer = db.query(Customer).filter(Customer.name == "Walk-in", Customer.tenant_id == tenant_id).first()
         if not customer:
-            customer = Customer(name="Walk-in", phone='', address='', credit_limit=0, opening_due=0, current_due=0)
+            customer = Customer(name="Walk-in", phone='', address='', credit_limit=0, opening_due=0, current_due=0, tenant_id=tenant_id)
             db.add(customer)
             db.flush()
 
@@ -49,9 +53,9 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
         paid_amount=data.paid_amount,
         total_amount=0,
         due_amount=0,
-        invoice_no=""
+        invoice_no="",
+        tenant_id=tenant_id,
     )
-
     db.add(sale)
     db.flush()
 
@@ -61,20 +65,13 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
 
     # 4. PROCESS ITEMS
     for item in data.items:
-
         product = db.query(Product).with_for_update().filter(
-            Product.id == item.product_id
+            Product.id == item.product_id, Product.tenant_id == tenant_id
         ).first()
-
         if not product:
             raise HTTPException(status_code=404, detail="Product not found")
-
-        # STOCK CHECK
         if product.current_stock < item.quantity:
-            raise HTTPException(
-                status_code=400,
-                detail=f"Not enough stock for {product.name}"
-            )
+            raise HTTPException(status_code=400, detail=f"Not enough stock for {product.name}")
 
         amount = item.quantity * item.rate
         total += amount
@@ -84,7 +81,8 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
             product_id=item.product_id,
             quantity=item.quantity,
             rate=item.rate,
-            amount=amount
+            amount=amount,
+            tenant_id=tenant_id,
         ))
 
         log_stock(
@@ -93,7 +91,8 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
             transaction_type="SALE",
             quantity=item.quantity,
             reference_id=sale.id,
-            reference_no=sale.invoice_no
+            reference_no=sale.invoice_no,
+            tenant_id=tenant_id,
         )
 
     # 5. FINAL CALCULATION
@@ -102,26 +101,23 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
         raise HTTPException(status_code=400, detail="Discount exceeds order total")
 
     net_total = total - discount
-
     if data.paid_amount > net_total:
         raise HTTPException(status_code=400, detail="Paid amount exceeds order total")
 
     due = net_total - data.paid_amount
-
     sale.total_amount = net_total
     sale.discount_amount = discount
     sale.due_amount = due
 
-    # UPDATE CUSTOMER DUE
     customer.current_due += due
 
-    # 7. LOG TO CENTRAL PAYMENT LEDGER (initial payment only)
     if data.paid_amount > 0:
         log_payment(
             db=db,
             transaction_type="SALE_PAYMENT",
             amount=data.paid_amount,
             reference_no=sale.invoice_no,
+            tenant_id=tenant_id,
             sale_id=sale.id,
             customer_id=data.customer_id,
             note=f"Payment on sale {sale.invoice_no}",
@@ -134,13 +130,13 @@ def create_sale(data: SaleCreate, db: Session = Depends(get_db), current_user: d
             transaction_type="DISCOUNT",
             amount=discount,
             reference_no=sale.invoice_no,
+            tenant_id=tenant_id,
             sale_id=sale.id,
             customer_id=data.customer_id,
             note=f"Discount on sale {sale.invoice_no}",
             created_by=_current_user_name(current_user),
         )
 
-    # 6. FINAL SAVE
     db.commit()
     db.refresh(sale)
 
@@ -165,10 +161,10 @@ def get_sales(
     has_due: Optional[bool] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
 ):
-    query = db.query(Sale).order_by(desc(Sale.id))
-
+    query = db.query(Sale).filter(Sale.tenant_id == tenant_id).order_by(desc(Sale.id))
     if customer_id:
         query = query.filter(Sale.customer_id == customer_id)
     if invoice_no:
@@ -189,7 +185,7 @@ def get_sales(
     for s in sales:
         customer_name = None
         if s.customer_id:
-            customer = db.query(Customer).filter(Customer.id == s.customer_id).first()
+            customer = db.query(Customer).filter(Customer.id == s.customer_id, Customer.tenant_id == tenant_id).first()
             if customer:
                 customer_name = customer.name
 
@@ -223,20 +219,16 @@ def get_sales(
 
 
 @router.get("/{sale_id}")
-def get_sale(sale_id: int, db: Session = Depends(get_db)):
-
-    sale = db.query(Sale).filter(Sale.id == sale_id).first()
-
+def get_sale(sale_id: int, db: Session = Depends(get_db), tenant_id: int = Depends(get_tenant_id)):
+    sale = db.query(Sale).filter(Sale.id == sale_id, Sale.tenant_id == tenant_id).first()
     if not sale:
         raise HTTPException(status_code=404, detail="Sale not found")
 
     items = db.query(SaleItem).filter(SaleItem.sale_id == sale.id).all()
 
-    customer_name = None
-    customer_phone = None
-    customer_address = None
+    customer_name = customer_phone = customer_address = None
     if sale.customer_id:
-        customer = db.query(Customer).filter(Customer.id == sale.customer_id).first()
+        customer = db.query(Customer).filter(Customer.id == sale.customer_id, Customer.tenant_id == tenant_id).first()
         if customer:
             customer_name = customer.name
             customer_phone = customer.phone

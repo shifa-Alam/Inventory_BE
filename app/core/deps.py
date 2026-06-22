@@ -6,7 +6,6 @@ from jose import jwt, JWTError, ExpiredSignatureError
 
 from app.core.security import SECRET_KEY, ALGORITHM
 
-# auto_error=False so we can return 401 (not 403) when the header is missing
 security = HTTPBearer(auto_error=False)
 
 ADMIN_ROLES = {"system_admin", "admin"}
@@ -33,4 +32,20 @@ def get_current_user(credentials: Optional[HTTPAuthorizationCredentials] = Depen
 def require_admin(payload: dict = Depends(get_current_user)):
     if payload.get("role") not in ADMIN_ROLES:
         raise HTTPException(status_code=403, detail="Admin access required")
+    return payload
+
+
+def get_tenant_id(payload: dict = Depends(get_current_user)) -> int:
+    tenant_id = payload.get("tenant_id")
+    if tenant_id is None:
+        raise HTTPException(
+            status_code=403,
+            detail="No tenant context. system_admin cannot use tenant-scoped endpoints."
+        )
+    return int(tenant_id)
+
+
+def require_system_admin(payload: dict = Depends(get_current_user)):
+    if payload.get("role") != "system_admin":
+        raise HTTPException(status_code=403, detail="System admin access required")
     return payload

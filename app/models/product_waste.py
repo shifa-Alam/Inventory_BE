@@ -1,4 +1,4 @@
-﻿from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Text
+from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Text
 from datetime import datetime
 from app.core.database import Base
 
@@ -12,3 +12,4 @@ class ProductWaste(Base):
     reason = Column(Text)
     waste_no = Column(String(50), nullable=False)
     created_at = Column(DateTime, default=datetime.now)
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=False, index=True)

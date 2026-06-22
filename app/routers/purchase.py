@@ -4,7 +4,7 @@ from typing import Optional
 from datetime import datetime, date, time
 
 from app.core.database import get_db
-from app.core.deps import get_current_user
+from app.core.deps import get_current_user, get_tenant_id
 from app.core.pagination import make_page
 from app.core.stock import log_stock
 from app.models.purchase import Purchase
@@ -22,27 +22,27 @@ router = APIRouter(
 
 
 @router.post("/")
-def create_purchase(data: PurchaseCreate, db: Session = Depends(get_db)):
-
+def create_purchase(
+    data: PurchaseCreate,
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
+):
     total = 0
 
-    # 1. Create Purchase Master
     purchase = Purchase(
         supplier_id=data.supplier_id,
         total_amount=0,
-        invoice_no=""
+        invoice_no="",
+        tenant_id=tenant_id,
     )
-
     db.add(purchase)
     db.flush()
 
-    from datetime import datetime
     date_part = datetime.now().strftime("%Y%m%d")
     purchase.invoice_no = f"PUR-{date_part}-{str(purchase.id).zfill(5)}"
 
-    # 2. Loop Items
     for item in data.items:
-        product = db.query(Product).filter(Product.id == item.product_id).first()
+        product = db.query(Product).filter(Product.id == item.product_id, Product.tenant_id == tenant_id).first()
         if not product:
             raise HTTPException(status_code=404, detail=f"Product {item.product_id} not found")
 
@@ -54,7 +54,8 @@ def create_purchase(data: PurchaseCreate, db: Session = Depends(get_db)):
             product_id=item.product_id,
             quantity=item.quantity,
             rate=item.rate,
-            amount=amount
+            amount=amount,
+            tenant_id=tenant_id,
         ))
 
         log_stock(
@@ -63,18 +64,13 @@ def create_purchase(data: PurchaseCreate, db: Session = Depends(get_db)):
             transaction_type="PURCHASE",
             quantity=item.quantity,
             reference_id=purchase.id,
-            reference_no=purchase.invoice_no
+            reference_no=purchase.invoice_no,
+            tenant_id=tenant_id,
         )
 
-    # 4. Update Total
     purchase.total_amount = total
-
     db.commit()
-
-    return {
-        "message": "Purchase created successfully",
-        "total": total
-    }
+    return {"message": "Purchase created successfully", "total": total}
 
 
 @router.get("/")
@@ -84,10 +80,10 @@ def get_purchases(
     date_to: Optional[date] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
 ):
-    query = db.query(Purchase).order_by(desc(Purchase.id))
-
+    query = db.query(Purchase).filter(Purchase.tenant_id == tenant_id).order_by(desc(Purchase.id))
     if supplier_id:
         query = query.filter(Purchase.supplier_id == supplier_id)
     if date_from:
@@ -100,7 +96,7 @@ def get_purchases(
 
     result = []
     for p in purchases:
-        supplier = db.query(Supplier).filter(Supplier.id == p.supplier_id).first()
+        supplier = db.query(Supplier).filter(Supplier.id == p.supplier_id, Supplier.tenant_id == tenant_id).first()
         result.append({
             "id": p.id,
             "invoice_no": p.invoice_no,
@@ -109,101 +105,33 @@ def get_purchases(
             "total_amount": p.total_amount,
             "created_at": p.created_at
         })
-
     return make_page(result, total, page, page_size)
 
 
 @router.get("/{purchase_id}")
-def get_purchase(
-    purchase_id: int,
-    db: Session = Depends(get_db)
-):
-
-    purchase = (
-        db.query(Purchase)
-        .filter(
-            Purchase.id == purchase_id
-        )
-        .first()
-    )
-
+def get_purchase(purchase_id: int, db: Session = Depends(get_db), tenant_id: int = Depends(get_tenant_id)):
+    purchase = db.query(Purchase).filter(Purchase.id == purchase_id, Purchase.tenant_id == tenant_id).first()
     if not purchase:
+        raise HTTPException(status_code=404, detail="Purchase not found")
 
-        raise HTTPException(
-            status_code=404,
-            detail="Purchase not found"
-        )
-
-    supplier = (
-        db.query(Supplier)
-        .filter(
-            Supplier.id ==
-            purchase.supplier_id
-        )
-        .first()
-    )
-
-    purchase_items = (
-        db.query(PurchaseItem)
-        .filter(
-            PurchaseItem.purchase_id ==
-            purchase.id
-        )
-        .all()
-    )
+    supplier = db.query(Supplier).filter(Supplier.id == purchase.supplier_id).first()
+    purchase_items = db.query(PurchaseItem).filter(PurchaseItem.purchase_id == purchase.id).all()
 
     items = []
-
     for item in purchase_items:
-
-        product = (
-            db.query(Product)
-            .filter(
-                Product.id ==
-                item.product_id
-            )
-            .first()
-        )
-
+        product = db.query(Product).filter(Product.id == item.product_id).first()
         items.append({
-
-            "product_id":
-            item.product_id,
-
-            "product_name":
-            product.name
-            if product
-            else "",
-
-            "quantity":
-            item.quantity,
-
-            "rate":
-            item.rate,
-
-            "total":
-            item.quantity *
-            item.rate
-
+            "product_id": item.product_id,
+            "product_name": product.name if product else "",
+            "quantity": item.quantity,
+            "rate": item.rate,
+            "total": item.quantity * item.rate,
         })
 
     return {
-
-        "id":
-        purchase.id,
-
-        "supplier_name":
-        supplier.name
-        if supplier
-        else "",
-
-        "created_at":
-        purchase.created_at,
-
-        "total_amount":
-        purchase.total_amount,
-
-        "items":
-        items
-
+        "id": purchase.id,
+        "supplier_name": supplier.name if supplier else "",
+        "created_at": purchase.created_at,
+        "total_amount": purchase.total_amount,
+        "items": items,
     }

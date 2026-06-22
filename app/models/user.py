@@ -1,5 +1,4 @@
-from sqlalchemy import Column, Integer, String
-
+from sqlalchemy import Column, Integer, String, ForeignKey
 from app.core.database import Base
 
 
@@ -10,3 +9,4 @@ class User(Base):
     username = Column(String(50), unique=True, index=True, nullable=False)
     password = Column(String(255), nullable=False)
     role = Column(String(20), default="admin")
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=True)

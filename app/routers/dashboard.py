@@ -4,7 +4,7 @@ from sqlalchemy import func, case, and_
 from datetime import datetime, date, timedelta, time
 
 from app.core.database import get_db
-from app.core.deps import get_current_user
+from app.core.deps import get_current_user, get_tenant_id
 from app.models.product import Product
 from app.models.sales import Sale
 from app.models.sales_item import SaleItem
@@ -26,8 +26,10 @@ def _pct_change(current, previous):
 
 
 @router.get("/")
-def dashboard_summary(db: Session = Depends(get_db)):
-
+def dashboard_summary(
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
+):
     today        = date.today()
     yesterday    = today - timedelta(days=1)
     month_start  = date(today.year, today.month, 1)
@@ -46,34 +48,27 @@ def dashboard_summary(db: Session = Depends(get_db)):
     dt_lm_max      = datetime.combine(last_month_end, time.max)
     dt_week_min    = datetime.combine(week_ago, time.min)
 
-    # ── 1. Sales aggregates (today / yesterday / month / last month) ──
-    # Single query using conditional aggregation
+    # ── 1. Sales aggregates ──
     sale_aggs = db.query(
         func.coalesce(func.sum(case(
-            (and_(Sale.created_at >= dt_today_min, Sale.created_at <= dt_today_max), Sale.total_amount),
-            else_=0
+            (and_(Sale.created_at >= dt_today_min, Sale.created_at <= dt_today_max), Sale.total_amount), else_=0
         )), 0).label("today_sales"),
         func.coalesce(func.count(case(
-            (and_(Sale.created_at >= dt_today_min, Sale.created_at <= dt_today_max), Sale.id),
-            else_=None
+            (and_(Sale.created_at >= dt_today_min, Sale.created_at <= dt_today_max), Sale.id), else_=None
         )), 0).label("today_invoices"),
         func.coalesce(func.sum(case(
-            (and_(Sale.created_at >= dt_yest_min, Sale.created_at <= dt_yest_max), Sale.total_amount),
-            else_=0
+            (and_(Sale.created_at >= dt_yest_min, Sale.created_at <= dt_yest_max), Sale.total_amount), else_=0
         )), 0).label("yesterday_sales"),
         func.coalesce(func.sum(case(
-            (and_(Sale.created_at >= dt_month_min, Sale.created_at <= dt_today_max), Sale.total_amount),
-            else_=0
+            (and_(Sale.created_at >= dt_month_min, Sale.created_at <= dt_today_max), Sale.total_amount), else_=0
         )), 0).label("month_sales"),
         func.coalesce(func.count(case(
-            (and_(Sale.created_at >= dt_month_min, Sale.created_at <= dt_today_max), Sale.id),
-            else_=None
+            (and_(Sale.created_at >= dt_month_min, Sale.created_at <= dt_today_max), Sale.id), else_=None
         )), 0).label("month_invoices"),
         func.coalesce(func.sum(case(
-            (and_(Sale.created_at >= dt_lm_min, Sale.created_at <= dt_lm_max), Sale.total_amount),
-            else_=0
+            (and_(Sale.created_at >= dt_lm_min, Sale.created_at <= dt_lm_max), Sale.total_amount), else_=0
         )), 0).label("last_month_sales"),
-    ).one()
+    ).filter(Sale.tenant_id == tenant_id).one()
 
     today_sales      = float(sale_aggs.today_sales)
     today_invoices   = int(sale_aggs.today_invoices)
@@ -82,50 +77,48 @@ def dashboard_summary(db: Session = Depends(get_db)):
     month_invoices   = int(sale_aggs.month_invoices)
     last_month_sales = float(sale_aggs.last_month_sales)
 
-    # ── 2. Payment aggregates (today / month) ─────────────────────
+    # ── 2. Payment aggregates ──
     pay_types = ["SALE_PAYMENT", "DUE_PAYMENT"]
     pay_aggs = db.query(
         func.coalesce(func.sum(case(
             (and_(PaymentLedger.created_at >= dt_today_min,
                   PaymentLedger.created_at <= dt_today_max,
-                  PaymentLedger.transaction_type.in_(pay_types)), PaymentLedger.amount),
-            else_=0
+                  PaymentLedger.transaction_type.in_(pay_types)), PaymentLedger.amount), else_=0
         )), 0).label("today_collections"),
         func.coalesce(func.sum(case(
             (and_(PaymentLedger.created_at >= dt_month_min,
-                  PaymentLedger.transaction_type.in_(pay_types)), PaymentLedger.amount),
-            else_=0
+                  PaymentLedger.transaction_type.in_(pay_types)), PaymentLedger.amount), else_=0
         )), 0).label("month_collections"),
-    ).one()
+    ).filter(PaymentLedger.tenant_id == tenant_id).one()
 
     today_collections = float(pay_aggs.today_collections)
     month_collections = float(pay_aggs.month_collections)
 
-    # ── 3. Purchase total this month ──────────────────────────────
+    # ── 3. Purchase total this month ──
     month_purchase = float(db.query(
         func.coalesce(func.sum(Purchase.total_amount), 0)
-    ).filter(Purchase.created_at >= dt_month_min).scalar())
+    ).filter(Purchase.created_at >= dt_month_min, Purchase.tenant_id == tenant_id).scalar())
 
-    # ── 4. Inventory aggregates ───────────────────────────────────
+    # ── 4. Inventory aggregates ──
     inv_aggs = db.query(
         func.count(Product.id).label("total_products"),
         func.coalesce(func.sum(Product.current_stock * Product.purchase_price), 0).label("stock_value"),
         func.coalesce(func.sum(case((Product.current_stock <= 10, 1), else_=0)), 0).label("low_stock_count"),
-    ).one()
+    ).filter(Product.tenant_id == tenant_id).one()
 
     total_products  = int(inv_aggs.total_products)
     stock_value     = float(inv_aggs.stock_value)
     low_stock_count = int(inv_aggs.low_stock_count)
 
-    total_customers = db.query(func.count(Customer.id)).scalar()
-    total_outstanding_due = float(db.query(func.coalesce(func.sum(Customer.current_due), 0)).scalar())
+    total_customers = db.query(func.count(Customer.id)).filter(Customer.tenant_id == tenant_id).scalar()
+    total_outstanding_due = float(db.query(func.coalesce(func.sum(Customer.current_due), 0)).filter(Customer.tenant_id == tenant_id).scalar())
 
-    # ── 5. 7-day chart — 2 queries instead of 21 ─────────────────
+    # ── 5. 7-day chart ──
     chart_sales_rows = db.query(
         func.date(Sale.created_at).label("day"),
         func.coalesce(func.sum(Sale.total_amount), 0).label("amount"),
         func.count(Sale.id).label("count"),
-    ).filter(Sale.created_at >= dt_week_min).group_by(func.date(Sale.created_at)).all()
+    ).filter(Sale.created_at >= dt_week_min, Sale.tenant_id == tenant_id).group_by(func.date(Sale.created_at)).all()
 
     chart_pay_rows = db.query(
         func.date(PaymentLedger.created_at).label("day"),
@@ -133,6 +126,7 @@ def dashboard_summary(db: Session = Depends(get_db)):
     ).filter(
         PaymentLedger.created_at >= dt_week_min,
         PaymentLedger.transaction_type.in_(pay_types),
+        PaymentLedger.tenant_id == tenant_id,
     ).group_by(func.date(PaymentLedger.created_at)).all()
 
     sales_by_day   = {str(r.day): (float(r.amount), int(r.count)) for r in chart_sales_rows}
@@ -151,7 +145,7 @@ def dashboard_summary(db: Session = Depends(get_db)):
             "count":      cnt,
         })
 
-    # ── 6. Top 5 products by revenue this month ───────────────────
+    # ── 6. Top 5 products by revenue this month ──
     top_rows = (
         db.query(
             SaleItem.product_id,
@@ -162,7 +156,7 @@ def dashboard_summary(db: Session = Depends(get_db)):
         )
         .join(Sale, Sale.id == SaleItem.sale_id)
         .join(Product, Product.id == SaleItem.product_id)
-        .filter(Sale.created_at >= dt_month_min)
+        .filter(Sale.created_at >= dt_month_min, Sale.tenant_id == tenant_id)
         .group_by(SaleItem.product_id, Product.name, Product.purchase_price)
         .order_by(func.sum(SaleItem.amount).desc())
         .limit(5).all()
@@ -172,15 +166,9 @@ def dashboard_summary(db: Session = Depends(get_db)):
         revenue = float(r.revenue)
         cost    = (r.purchase_price or 0) * float(r.qty)
         margin  = round((revenue - cost) / revenue * 100, 1) if revenue else 0
-        top_products.append({
-            "name":    r.product_name,
-            "qty":     int(r.qty),
-            "revenue": revenue,
-            "margin":  margin,
-        })
+        top_products.append({"name": r.product_name, "qty": int(r.qty), "revenue": revenue, "margin": margin})
 
-    # ── 7. Slow-moving items ──────────────────────────────────────
-    # Products with stock > 0, sold least this month
+    # ── 7. Slow-moving items ──
     slow_rows = (
         db.query(
             Product.id,
@@ -192,10 +180,10 @@ def dashboard_summary(db: Session = Depends(get_db)):
             SaleItem,
             and_(SaleItem.product_id == Product.id,
                  SaleItem.sale_id.in_(
-                     db.query(Sale.id).filter(Sale.created_at >= dt_month_min).scalar_subquery()
+                     db.query(Sale.id).filter(Sale.created_at >= dt_month_min, Sale.tenant_id == tenant_id).scalar_subquery()
                  ))
         )
-        .filter(Product.current_stock > 0)
+        .filter(Product.current_stock > 0, Product.tenant_id == tenant_id)
         .group_by(Product.id, Product.name, Product.current_stock)
         .order_by(func.coalesce(func.sum(SaleItem.quantity), 0).asc(), Product.current_stock.desc())
         .limit(8).all()
@@ -205,33 +193,29 @@ def dashboard_summary(db: Session = Depends(get_db)):
         for r in slow_rows
     ]
 
-    # ── 8. Low stock items ────────────────────────────────────────
+    # ── 8. Low stock items ──
     low_stock_items = [
-        {
-            "id":        p.id,
-            "name":      p.name,
-            "stock":     p.current_stock or 0,
-            "max_stock": max((p.current_stock or 0) + 50, 50),
-        }
+        {"id": p.id, "name": p.name, "stock": p.current_stock or 0, "max_stock": max((p.current_stock or 0) + 50, 50)}
         for p in db.query(Product)
-                   .filter(Product.current_stock <= 10)
+                   .filter(Product.current_stock <= 10, Product.tenant_id == tenant_id)
                    .order_by(Product.current_stock)
                    .limit(8).all()
     ]
 
-    # ── 9. Top due customers ──────────────────────────────────────
+    # ── 9. Top due customers ──
     top_due_customers = [
         {"name": c.name, "phone": c.phone, "due": round(c.current_due, 2)}
         for c in db.query(Customer)
-                   .filter(Customer.current_due > 0)
+                   .filter(Customer.current_due > 0, Customer.tenant_id == tenant_id)
                    .order_by(Customer.current_due.desc())
                    .limit(5).all()
     ]
 
-    # ── 10. Recent 8 sales — single join query ────────────────────
+    # ── 10. Recent 8 sales ──
     recent_rows = (
         db.query(Sale, Customer.name.label("customer_name"))
         .outerjoin(Customer, Customer.id == Sale.customer_id)
+        .filter(Sale.tenant_id == tenant_id)
         .order_by(Sale.id.desc())
         .limit(8).all()
     )
@@ -247,7 +231,6 @@ def dashboard_summary(db: Session = Depends(get_db)):
         for s, cname in recent_rows
     ]
 
-    # ── Derived metrics ───────────────────────────────────────────
     profit         = month_sales - month_purchase
     profit_margin  = round(profit / month_sales * 100, 1) if month_sales else 0
     avg_order_value = round(month_sales / month_invoices, 2) if month_invoices else 0

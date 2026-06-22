@@ -10,6 +10,7 @@ def log_stock(
     quantity: float,
     reference_id: int,
     reference_no: str,
+    tenant_id: int,
     note: str = ""
 ):
     stock_before = product.current_stock
@@ -27,5 +28,6 @@ def log_stock(
         quantity=quantity,
         stock_before=stock_before,
         stock_after=product.current_stock,
-        note=note
+        note=note,
+        tenant_id=tenant_id,
     ))

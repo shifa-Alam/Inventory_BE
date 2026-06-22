@@ -1,4 +1,4 @@
-﻿from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Text
+from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Text
 from datetime import datetime
 from app.core.database import Base
 
@@ -13,6 +13,7 @@ class SaleReturn(Base):
     total_amount = Column(Float, default=0)
     reason = Column(Text)
     created_at = Column(DateTime, default=datetime.now)
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=False, index=True)
 
 
 class SaleReturnItem(Base):
@@ -24,3 +25,4 @@ class SaleReturnItem(Base):
     quantity = Column(Float)
     rate = Column(Float)
     amount = Column(Float)
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=False, index=True)

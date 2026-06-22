@@ -1,10 +1,12 @@
 from pydantic import BaseModel, Field
+from typing import Optional
 
 
 class UserCreate(BaseModel):
     username: str = Field(min_length=3, max_length=50)
     password: str = Field(default="", max_length=128)
     role: str = Field(default="admin")
+    tenant_id: Optional[int] = None
 
 
 class UserLogin(BaseModel):

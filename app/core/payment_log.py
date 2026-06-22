@@ -7,6 +7,7 @@ def log_payment(
     transaction_type: str,
     amount: float,
     reference_no: str,
+    tenant_id: int,
     sale_id: int | None = None,
     customer_id: int | None = None,
     note: str | None = None,
@@ -20,5 +21,6 @@ def log_payment(
         amount=round(amount, 2),
         note=note,
         created_by=created_by,
+        tenant_id=tenant_id,
     )
     db.add(entry)

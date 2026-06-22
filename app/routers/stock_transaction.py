@@ -5,7 +5,7 @@ from typing import Optional
 from datetime import datetime, date, time
 
 from app.core.database import get_db
-from app.core.deps import get_current_user
+from app.core.deps import get_current_user, get_tenant_id
 from app.core.pagination import make_page
 from app.models.stock_transaction import StockTransaction
 from app.models.product import Product
@@ -25,10 +25,10 @@ def get_transactions(
     date_to: Optional[date] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
 ):
-    query = db.query(StockTransaction).order_by(desc(StockTransaction.id))
-
+    query = db.query(StockTransaction).filter(StockTransaction.tenant_id == tenant_id).order_by(desc(StockTransaction.id))
     if product_id:
         query = query.filter(StockTransaction.product_id == product_id)
     if transaction_type:
@@ -56,21 +56,22 @@ def get_transactions(
             "note": t.note,
             "created_at": t.created_at
         })
-
     return make_page(result, total, page, page_size)
 
 
 @router.get("/product/{product_id}")
-def get_product_ledger(product_id: int, db: Session = Depends(get_db)):
-    product = db.query(Product).filter(Product.id == product_id).first()
-
+def get_product_ledger(
+    product_id: int,
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
+):
+    product = db.query(Product).filter(Product.id == product_id, Product.tenant_id == tenant_id).first()
     transactions = (
         db.query(StockTransaction)
-        .filter(StockTransaction.product_id == product_id)
+        .filter(StockTransaction.product_id == product_id, StockTransaction.tenant_id == tenant_id)
         .order_by(StockTransaction.id)
         .all()
     )
-
     return {
         "product_id": product_id,
         "product_name": product.name if product else None,

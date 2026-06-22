@@ -1,4 +1,4 @@
-﻿from sqlalchemy import Column, Integer, Float, String, DateTime, ForeignKey
+from sqlalchemy import Column, Integer, Float, String, DateTime, ForeignKey
 from datetime import datetime
 from app.core.database import Base
 
@@ -14,3 +14,4 @@ class CustomerPayment(Base):
     note = Column(String(255), nullable=True)
     reference_no = Column(String(50), nullable=False)
     created_at = Column(DateTime, default=datetime.now)
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=False, index=True)

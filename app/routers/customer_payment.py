@@ -1,10 +1,10 @@
-﻿from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.orm import Session
 from typing import Optional
 from datetime import datetime, date
 
 from app.core.database import get_db
-from app.core.deps import get_current_user
+from app.core.deps import get_current_user, get_tenant_id
 from app.core.pagination import make_page
 from app.core.payment_log import log_payment
 from app.models.customer_payment import CustomerPayment
@@ -26,11 +26,16 @@ def _gen_ref(db: Session) -> str:
 
 
 @router.post("/invoice")
-def pay_invoice(data: CustomerPaymentCreate, db: Session = Depends(get_db), current_user: dict = Depends(get_current_user)):
+def pay_invoice(
+    data: CustomerPaymentCreate,
+    db: Session = Depends(get_db),
+    current_user: dict = Depends(get_current_user),
+    tenant_id: int = Depends(get_tenant_id),
+):
     if data.amount == 0 and data.discount_amount == 0:
         raise HTTPException(status_code=400, detail="Amount or discount must be greater than zero")
 
-    sale = db.query(Sale).filter(Sale.id == data.sale_id).first()
+    sale = db.query(Sale).filter(Sale.id == data.sale_id, Sale.tenant_id == tenant_id).first()
     if not sale:
         raise HTTPException(status_code=404, detail="Sale not found")
     if sale.due_amount <= 0:
@@ -50,6 +55,7 @@ def pay_invoice(data: CustomerPaymentCreate, db: Session = Depends(get_db), curr
         discount_amount=data.discount_amount,
         note=data.note,
         reference_no=_gen_ref(db),
+        tenant_id=tenant_id,
     )
     db.add(payment)
 
@@ -58,7 +64,7 @@ def pay_invoice(data: CustomerPaymentCreate, db: Session = Depends(get_db), curr
     sale.due_amount = round(max(0, sale.due_amount - total_reduction), 2)
 
     if sale.customer_id:
-        customer = db.query(Customer).filter(Customer.id == sale.customer_id).first()
+        customer = db.query(Customer).filter(Customer.id == sale.customer_id, Customer.tenant_id == tenant_id).first()
         if customer:
             customer.current_due = round(max(0, customer.current_due - total_reduction), 2)
 
@@ -69,6 +75,7 @@ def pay_invoice(data: CustomerPaymentCreate, db: Session = Depends(get_db), curr
             transaction_type="DUE_PAYMENT",
             amount=data.amount,
             reference_no=payment.reference_no,
+            tenant_id=tenant_id,
             sale_id=data.sale_id,
             customer_id=sale.customer_id,
             note=data.note or f"Due payment for {sale.invoice_no}",
@@ -80,6 +87,7 @@ def pay_invoice(data: CustomerPaymentCreate, db: Session = Depends(get_db), curr
             transaction_type="DISCOUNT",
             amount=-data.discount_amount,
             reference_no=payment.reference_no,
+            tenant_id=tenant_id,
             sale_id=data.sale_id,
             customer_id=sale.customer_id,
             note=data.note or f"Discount on {sale.invoice_no}",
@@ -108,14 +116,15 @@ def list_payments(
     date_to: Optional[date] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
 ):
     query = (
         db.query(CustomerPayment, Sale.invoice_no, Customer.name.label("customer_name"))
         .join(Sale, CustomerPayment.sale_id == Sale.id)
         .outerjoin(Customer, CustomerPayment.customer_id == Customer.id)
+        .filter(CustomerPayment.tenant_id == tenant_id)
     )
-
     if sale_id:
         query = query.filter(CustomerPayment.sale_id == sale_id)
     if customer_id:
@@ -145,15 +154,19 @@ def list_payments(
 
 
 @router.get("/invoice/summary")
-def payment_summary(db: Session = Depends(get_db)):
+def payment_summary(
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
+):
     today = date.today()
     today_total = db.query(func.sum(CustomerPayment.amount)).filter(
-        func.date(CustomerPayment.created_at) == today
+        func.date(CustomerPayment.created_at) == today,
+        CustomerPayment.tenant_id == tenant_id,
     ).scalar() or 0
-    all_total = db.query(func.sum(CustomerPayment.amount)).scalar() or 0
-    all_discount = db.query(func.sum(CustomerPayment.discount_amount)).scalar() or 0
-    count = db.query(func.count(CustomerPayment.id)).scalar() or 0
-    pending = db.query(func.count(Sale.id)).filter(Sale.due_amount > 0).scalar() or 0
+    all_total = db.query(func.sum(CustomerPayment.amount)).filter(CustomerPayment.tenant_id == tenant_id).scalar() or 0
+    all_discount = db.query(func.sum(CustomerPayment.discount_amount)).filter(CustomerPayment.tenant_id == tenant_id).scalar() or 0
+    count = db.query(func.count(CustomerPayment.id)).filter(CustomerPayment.tenant_id == tenant_id).scalar() or 0
+    pending = db.query(func.count(Sale.id)).filter(Sale.due_amount > 0, Sale.tenant_id == tenant_id).scalar() or 0
     return {
         "today_collection": round(today_total, 2),
         "total_collection": round(all_total, 2),

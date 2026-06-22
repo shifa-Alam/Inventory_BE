@@ -5,7 +5,7 @@ from typing import Optional
 from datetime import datetime, date, time
 
 from app.core.database import get_db
-from app.core.deps import get_current_user
+from app.core.deps import get_current_user, get_tenant_id
 from app.core.pagination import make_page
 from app.core.stock import log_stock
 from app.models.product_waste import ProductWaste
@@ -20,22 +20,23 @@ router = APIRouter(
 
 
 @router.post("/")
-def create_waste(data: ProductWasteCreate, db: Session = Depends(get_db)):
-    product = db.query(Product).filter(Product.id == data.product_id).first()
+def create_waste(
+    data: ProductWasteCreate,
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
+):
+    product = db.query(Product).filter(Product.id == data.product_id, Product.tenant_id == tenant_id).first()
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
-
     if product.current_stock < data.quantity:
-        raise HTTPException(
-            status_code=400,
-            detail=f"Not enough stock. Available: {product.current_stock}"
-        )
+        raise HTTPException(status_code=400, detail=f"Not enough stock. Available: {product.current_stock}")
 
     waste = ProductWaste(
         product_id=data.product_id,
         quantity=data.quantity,
         reason=data.reason,
-        waste_no=""
+        waste_no="",
+        tenant_id=tenant_id,
     )
     db.add(waste)
     db.flush()
@@ -51,12 +52,12 @@ def create_waste(data: ProductWasteCreate, db: Session = Depends(get_db)):
         quantity=data.quantity,
         reference_id=waste.id,
         reference_no=waste.waste_no,
-        note=data.reason
+        tenant_id=tenant_id,
+        note=data.reason,
     )
 
     db.commit()
     db.refresh(waste)
-
     return {
         "message": "Waste recorded successfully",
         "waste_no": waste.waste_no,
@@ -73,10 +74,10 @@ def get_wastes(
     date_to: Optional[date] = Query(None),
     page: int = Query(1, ge=1),
     page_size: int = Query(20, ge=1, le=1000),
-    db: Session = Depends(get_db)
+    db: Session = Depends(get_db),
+    tenant_id: int = Depends(get_tenant_id),
 ):
-    query = db.query(ProductWaste).order_by(desc(ProductWaste.id))
-
+    query = db.query(ProductWaste).filter(ProductWaste.tenant_id == tenant_id).order_by(desc(ProductWaste.id))
     if product_id:
         query = query.filter(ProductWaste.product_id == product_id)
     if date_from:
@@ -99,18 +100,15 @@ def get_wastes(
             "reason": w.reason,
             "created_at": w.created_at
         })
-
     return make_page(result, total, page, page_size)
 
 
 @router.get("/{waste_id}")
-def get_waste(waste_id: int, db: Session = Depends(get_db)):
-    waste = db.query(ProductWaste).filter(ProductWaste.id == waste_id).first()
+def get_waste(waste_id: int, db: Session = Depends(get_db), tenant_id: int = Depends(get_tenant_id)):
+    waste = db.query(ProductWaste).filter(ProductWaste.id == waste_id, ProductWaste.tenant_id == tenant_id).first()
     if not waste:
         raise HTTPException(status_code=404, detail="Waste record not found")
-
     product = db.query(Product).filter(Product.id == waste.product_id).first()
-
     return {
         "id": waste.id,
         "waste_no": waste.waste_no,
