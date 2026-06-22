@@ -81,6 +81,7 @@ def run_migrations():
             "ALTER TABLE products ADD UNIQUE KEY uq_product_sku_tenant (sku, tenant_id)",
             # Missing columns added after initial deploy
             "ALTER TABLE customers ADD COLUMN opening_due FLOAT NOT NULL DEFAULT 0",
+            "ALTER TABLE sales ADD COLUMN delivery_date DATE DEFAULT NULL",
         ]
         for sql in migrations:
             try:

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String
+from sqlalchemy import Column, Integer, Float, ForeignKey, DateTime, String, Date
 from datetime import datetime
 from app.core.database import Base
 
@@ -13,5 +13,6 @@ class Sale(Base):
     discount_amount = Column(Float, default=0)
     due_amount = Column(Float, default=0)
     invoice_no = Column(String(50), nullable=False)
+    delivery_date = Column(Date, nullable=True)
     created_at = Column(DateTime, default=datetime.now)
     tenant_id = Column(Integer, ForeignKey("tenants.id"), nullable=False, index=True)

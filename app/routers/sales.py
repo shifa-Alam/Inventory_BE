@@ -54,6 +54,7 @@ def create_sale(
         total_amount=0,
         due_amount=0,
         invoice_no="",
+        delivery_date=data.delivery_date,
         tenant_id=tenant_id,
     )
     db.add(sale)
@@ -211,6 +212,7 @@ def get_sales(
             "total_amount": s.total_amount,
             "subtotal": round((s.total_amount or 0) + (s.discount_amount or 0), 2),
             "due_amount": s.due_amount,
+            "delivery_date": s.delivery_date,
             "created_at": s.created_at,
             "items": item_list
         })
@@ -260,6 +262,7 @@ def get_sale(sale_id: int, db: Session = Depends(get_db), tenant_id: int = Depen
         "total_amount": sale.total_amount,
         "paid_amount": sale.paid_amount,
         "due_amount": sale.due_amount,
+        "delivery_date": sale.delivery_date,
         "created_at": sale.created_at,
         "items": item_list
     }
