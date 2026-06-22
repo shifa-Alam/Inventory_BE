@@ -79,6 +79,8 @@ def run_migrations():
             # Fix SKU unique constraint to be per-tenant
             "ALTER TABLE products DROP INDEX sku",
             "ALTER TABLE products ADD UNIQUE KEY uq_product_sku_tenant (sku, tenant_id)",
+            # Missing columns added after initial deploy
+            "ALTER TABLE customers ADD COLUMN opening_due FLOAT NOT NULL DEFAULT 0",
         ]
         for sql in migrations:
             try:
