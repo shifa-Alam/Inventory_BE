@@ -1,9 +1,10 @@
 from pydantic import BaseModel, Field
+from typing import Optional
 
 
 class ProductCreate(BaseModel):
     name: str = Field(min_length=1, max_length=150)
-    sku: str = Field(min_length=1, max_length=50)
+    sku: Optional[str] = Field(default=None, max_length=50)
     category_id: int
     purchase_price: float = Field(ge=0, default=0)
     sale_price: float = Field(ge=0, default=0)
@@ -13,7 +14,7 @@ class ProductCreate(BaseModel):
 
 class ProductUpdate(BaseModel):
     name: str = Field(min_length=1, max_length=150)
-    sku: str = Field(min_length=1, max_length=50)
+    sku: Optional[str] = Field(default=None, max_length=50)
     category_id: int
     purchase_price: float = Field(ge=0, default=0)
     sale_price: float = Field(ge=0, default=0)
