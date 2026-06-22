@@ -266,3 +266,22 @@ def get_sale(sale_id: int, db: Session = Depends(get_db), tenant_id: int = Depen
         "created_at": sale.created_at,
         "items": item_list
     }
+
+
+@router.patch("/{sale_id}/delivery-date")
+def update_delivery_date(
+    sale_id: int,
+    body: dict,
+    tenant_id: int = Depends(get_tenant_id),
+    db: Session = Depends(get_db)
+):
+    sale = db.query(Sale).filter(Sale.id == sale_id, Sale.tenant_id == tenant_id).first()
+    if not sale:
+        raise HTTPException(404, "Sale not found")
+    raw = body.get("delivery_date")
+    if raw:
+        sale.delivery_date = date.fromisoformat(raw)
+    else:
+        sale.delivery_date = None
+    db.commit()
+    return {"delivery_date": sale.delivery_date}
