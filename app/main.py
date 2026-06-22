@@ -35,8 +35,12 @@ Base.metadata.create_all(bind=engine)
 def seed_default_tenant():
     db = SessionLocal()
     try:
-        if not db.query(Tenant).first():
-            db.add(Tenant(name="Tenant 1"))
+        tenant = db.query(Tenant).filter(Tenant.id == 1).first()
+        if not tenant:
+            db.add(Tenant(id=1, name="Amira Traders"))
+            db.commit()
+        elif tenant.name == "Tenant 1":
+            tenant.name = "Amira Traders"
             db.commit()
     finally:
         db.close()
