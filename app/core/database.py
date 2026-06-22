@@ -5,7 +5,9 @@ from sqlalchemy.orm import declarative_base
 
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "mysql+pymysql://root:admin123##@localhost/inventorydb"
+    # "mysql+pymysql://root:admin123##@localhost/inventorydb"
+    "mysql+pymysql://root:WSyIQsGQuGLdKZOgHFlMCcmuxXdeMbbQ@thomas.proxy.rlwy.net:40299/railway"
+
 )
 
 engine = create_engine(DATABASE_URL)
@@ -14,8 +16,9 @@ engine = create_engine(DATABASE_URL)
 @event.listens_for(engine, "connect")
 def set_local_timezone(dbapi_connection, connection_record):
     cursor = dbapi_connection.cursor()
-    cursor.execute("SET time_zone = 'SYSTEM'")
+    cursor.execute("SET time_zone = '+06:00'")
     cursor.close()
+
 
 SessionLocal = sessionmaker(
     autocommit=False,
